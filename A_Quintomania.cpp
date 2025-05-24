@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 using namespace  std;
 using ll = long long;
@@ -6,27 +5,23 @@ int main() {
     ll t;
     cin >> t;
     while (t--) {
-        ll n,i;
+        ll n, i, j, k;
         cin >> n;
         ll a[n];
-        for (ll i = 0; i < n; i++) {
+        for (i = 0; i < n; i++) {
             cin >> a[i];
         }
         ll flag = 0;
-        for (i = 0; i < n-1; i++) {
-            if (a[i] == (i + 1)) {
+        for (i = 0; i < n - 1; i++) {
+            ll temp = abs(a[i] - a[i + 1]);
+            if (temp == 5 || temp == 7) {
                 continue;
-            }
-            else if (a[i + 1] == (i + 1)&&abs(a[i+1]-a[i])==1) {
-                swap(a[i], a[i + 1]);
             }
             else {
                 flag = 1;
                 break;
             }
-
         }
-        
         if (flag == 1) {
             cout << "NO" << endl;
         }
@@ -34,5 +29,4 @@ int main() {
             cout << "YES" << endl;
         }
     }
-   
 }
